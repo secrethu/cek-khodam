@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>src="khodam.js"</script>
+    <link rel="stylesheet" href="khodam.js">
+</head>
+<body>
+    <div class="container">
+        <h1>Check khodam</h1>
+       
+            <input type="text" id="inputan" placeholder="Masukkan Nama">
+            <button onclick="cekkhodam()"><b>Terawang</b></button>
+        
+        <p id="result"></p>
+    </div>
+    <div class="copyright">
+        <p>apps by | wirs</p>
+    </div>
+    <script>
+       function cekkhodam() {
+            const name = document.getElementById('inputan').value.trim();
+            if (name === "") {
+                XSAlert({
+                    title: 'Error',
+                    message: 'Nama tidak boleh kosong',
+                    icon: 'error',
+                    hideCancelButton: true
+                })
+                return;
+            }
+
+            const khodams = [
+                "Air Cucian Beras",
+                "Badut",
+                "kura kura ninja",
+                "Batu Karang",
+                "sempak beracun",
+                "kecoa",
+                " buaya",
+                "tempik",
+                "second coise",
+                "Pelangi Indah",
+                "naga bonar",
+                "Tanah Subur",
+                "Sepeda Ontel",
+                "Titid Terbang",
+                "kontol kuda",
+                "ketel kuda"
+                // Tambahin aja khodam lainnya disini bang.
+            ];
+
+            const acak = Math.floor(Math.random() * khodams.length);
+            const khodam = khodams[acak];
+            const hasil = `Nama: ${name}\nKhodam: ${khodam}`;
+
+            setTimeout(() => {
+                result.hasil = "";
+            }, 5000);
+
+            document.getElementById('result').innerText = hasil;
+        }
+        
+    </script>
+</body>
+</html>
